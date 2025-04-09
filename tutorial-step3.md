@@ -21,6 +21,8 @@ Now, create a file named `Config.ts` in the src directory. This file will store 
 Let's start by creating the `src/Config.ts` file:
 
 ```typescript
+/* Config.ts file */
+
 import { IapticConfig, IapticVerbosity } from "react-native-iaptic";
 
 /**
@@ -41,6 +43,8 @@ export class Config {
 Let's start by adding the following:
 
 ```typescript
+/* Config.ts file */
+
     /**
     * Iaptic configuration
     * 
@@ -93,6 +97,8 @@ This approach decouples your feature access logic from the specific products, ma
 Let's also add the entitlements to the `Config.ts` file. The information in the object entitlements will be diplayed in the subscription management screen.
 
 ```typescript
+/* Config.ts file */
+
 /**
  * Entitlement labels for UI display
  * 
@@ -128,6 +134,8 @@ This allows the following display in the subscription management screen.
 Last but not least, let's add the terms and conditions URL to the `Config.ts` file:
 
 ```typescript
+/* Config.ts file */
+
 /**
  * URL for terms and conditions
  * 
@@ -144,6 +152,8 @@ static termsUrl = 'https://www.example.com/terms';
 After adding all the components we've discussed, your complete `Config.ts` file should look like this:
 
 ```typescript
+/* Config.ts file */
+
 import { IapticConfig, IapticVerbosity } from "react-native-iaptic";
 
 /**

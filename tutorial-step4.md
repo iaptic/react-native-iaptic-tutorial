@@ -14,6 +14,8 @@ This class will handle the initialization of the IAP system, and provide methods
 2. Let's add the required imports and define our empty `AppService` class for now.
 
 ```typescript
+/* AppService.ts file */
+
 import { Platform, Alert, ToastAndroid } from 'react-native';
 import { IapticError, IapticSeverity, IapticOffer, IapticRN } from 'react-native-iaptic';
 import { Config } from './Config';
@@ -58,7 +60,11 @@ export class AppService {
 Add the following  code to your App.tsx file within your main component function:
 
 ```typescript
+/* App.tsx file */
+
+// Update this import
 import React, { useEffect, useState, useRef } from 'react';
+
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text, ScrollView } from 'react-native';
 
 // Add this import
@@ -99,6 +105,8 @@ What This Code Does:
 Now we'll add a function to initialize the IAP system at startup.
 
 ```typescript
+/* AppService.ts file */
+
 export class AppService {
   // ... existing code ...
   /**
@@ -126,6 +134,8 @@ export class AppService {
 To make sure this is called at startup, we'll add this to our App.tsx file:
 
 ```typescript
+/* App.tsx file */
+
 function App(): React.JSX.Element {
   // ... existing code ...
   // const iapService = ...;
@@ -147,6 +157,8 @@ What this code does:
 In our AppService class, let's implement the `initializeIaptic()` function.
 
 ```typescript
+/* AppService.ts file */
+
 async initializeIaptic() {
   try {
     // Set up listener for subscription changes (renewals, cancellations, etc.)
@@ -193,6 +205,8 @@ What this code does:
 Here's the complete AppService class:
 
 ```typescript
+/* AppService.ts file */
+
 import { Platform, Alert, ToastAndroid } from 'react-native';
 import { IapticError, IapticSeverity, IapticOffer, IapticRN } from 'react-native-iaptic';
 import { Config } from './Config';
@@ -279,6 +293,8 @@ export class AppService {
 Here's the complete App.tsx class:
 
 ```typescript
+/* App.tsx file */
+
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text, ScrollView } from 'react-native';
 import { AppService } from './src/AppService';
@@ -392,6 +408,15 @@ export default App;
 At this point you can run the app on your device. It should initialize the In-app purchase service through loading the products and purchases. But for now you can not make new purchases.
 
 This step helps make sure that the service and configuration are well set up before going further.
+
+Note: If you'll be running your app on iOS, open XCode and configure:
+
+- Your team
+- Your bundle id
+- Add the "In-App Purchase" capability
+
+<img src="img/ios-settings.png" alt="Subscription view" style="max-width: 600px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+
 
 ### 7. What's Next?
 

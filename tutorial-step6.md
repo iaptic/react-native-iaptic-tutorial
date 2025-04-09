@@ -11,6 +11,8 @@
 Now, let's activate our subscription button by linking it to the `IapticRN.presentSubscriptionView()` method. Let's go back to our App.tsx Class and update our subscriptionButton:
 
 ```typescript
+/* App.tsx file */
+
 <TouchableOpacity
     style={[
     styles.button,
@@ -32,8 +34,10 @@ Now, let's activate our subscription button by linking it to the `IapticRN.prese
 3. Handles the entire purchase flow automatically
 4. Closes the view once a purchase is completed or canceled
 
-#### What is displayed on the button?
+#### What does the following mean?
 ```typescript
+/* App.tsx file */
+
     <Text style={styles.buttonText}>{!entitlements.includes('basic') ? 'Subscribe To Unlock' : 'Manage Subscription'}</Text>
 ```
 This line uses a ternary operator to dynamically change the button text based on the user's subscription status:
@@ -49,6 +53,8 @@ Instead of having to develop a subscription view yourself, Iaptic offers you the
 Let's add the following to the App.tsx file:
 
 ```typescript
+/* App.tsx file */
+
 ...
 // Add these two lines to the imports
 import { IapticRN, IapticSubscriptionView } from 'react-native-iaptic';
@@ -84,9 +90,11 @@ This component creates a complete subscription experience that handles all the c
 
 ### 3. Adding function handlePurchaseComplete to AppService
 
-Let's update our `AppService.tsx` file to include the `handlePurchaseComplete` function. We have decided to make an alert ad some logs in this function.
+Let's update our `AppService.ts` file to include the `handlePurchaseComplete` function. We have decided to make an alert ad some logs in this function.
 
 ```typescript
+/* AppService.ts file */
+
 ...
 
   /**
@@ -108,6 +116,8 @@ Good news: we have completed our work!
 Here's the complete AppService class:
 
 ```typescript
+/* AppService.ts file */
+
 import { Platform, Alert, ToastAndroid } from 'react-native';
 import { IapticError, IapticSeverity, IapticOffer, IapticRN } from 'react-native-iaptic';
 import { Config } from './Config';
@@ -223,6 +233,8 @@ export class AppService {
 Here's the complete App.tsx class:
 
 ```typescript
+/* App.tsx file */
+
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native

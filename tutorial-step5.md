@@ -8,9 +8,11 @@ Now, let's start the serious stuff.
 
 ### 1. Check the entitlements
 
-Let's create the appropriate feedback when the user presses on a button related to a feature. We will add a function in the `AppService.tsx` file that checks whether the user has the related entitlement:
+Let's create the appropriate feedback when the user presses on a button related to a feature. We will add a function in the `AppService.ts` file that checks whether the user has the related entitlement:
 
 ```typescript
+/* AppService.ts file */
+
   /**
    * Check if a feature is unlocked based on user's entitlements
    * Used to gate premium features in the app
@@ -30,9 +32,11 @@ Let's create the appropriate feedback when the user presses on a button related 
 
 #### Update the App.tsx Class
 
-Now, let's connect our UI buttons to the `checkFeatureAccess` method. Update your feature buttons in `App.tsx` to call this method when pressed:
+Now, let's connect our UI blue buttons to the `checkFeatureAccess` method. Change the code of your feature buttons in `App.tsx` to call this method when pressed:
 
 ```typescript
+/* App.tsx file */
+
 {/* Basic feature access button */}
 <TouchableOpacity
   onPress={() => iapService.checkFeatureAccess("basic")}

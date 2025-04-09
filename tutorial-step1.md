@@ -16,7 +16,9 @@ Before you begin this tutorial, make sure you have the following:
 
 ## Introduction
 
-This tutorial will guide you through integrating in-app purchases (IAP) into a React Native application using the react-native-iaptic library. The react-native-iaptic library provides a simple integration and a built-in subscription management screen. Using the simple integration, you do not need to create screens to manage the subscription process, you only have to configure your information. The end result looks like the following:
+This tutorial will guide you through integrating in-app purchases (IAP) into a React Native application using the react-native-iaptic library. Our library works with the React Native CLI. If you are using Expo, you should eject from it to be able to integrate the library.
+
+The react-native-iaptic library provides a simple integration and a built-in subscription management screen. Using the simple integration, you do not need to create screens to manage the subscription process, you only have to configure your information. The end result looks like the following:
 
 <img src="img/iapui2.png" alt="Subscription view" style="max-width: 300px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
 
@@ -42,6 +44,8 @@ cd IAPDemoApp
 Replace the contents of the `App.tsx` file with the following code. This code will only display buttons that will be locked/unlocked based on the user's subscription status in later steps, in addition to a button that will open the subscription management screen:
 
 ```typescript
+/* App.tsx file */
+
 import React from 'react';
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text, ScrollView } from 'react-native';
 
